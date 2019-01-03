@@ -51,7 +51,7 @@ podTemplate(
     
     stage('Code Analysis') {
       echo "Running Code Analysis"
-      sh "${mvnCmd} -f ./Nationalparks/pom.xml sonar:sonar -Dsonar.host.url=http://sonarqube-${GUID}-sonarqube.apps.${CLUSTER}/ -Dsonar.projectName=${JOB_BASE_NAME}-${devTag}"
+      sh "${mvnCmd} -f ./Nationalparks/pom.xml sonar:sonar -Dsonar.host.url=http://sonarqube.${GUID}-sonarqube.srv/ -Dsonar.projectName=${JOB_BASE_NAME}-${devTag}"
     }
 
     stage('Publish to Nexus') {
