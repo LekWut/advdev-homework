@@ -260,7 +260,9 @@ objects:
       app: sonarqube
     name: sonarqube
   spec:
-    host: http://{.spec.host}{.spec.path}
+    tls:
+      insecureEdgeTerminationPolicy: Redirect
+      termination: edge
     port:
       targetPort: 9000-tcp
     to:
